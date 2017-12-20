@@ -1,6 +1,6 @@
 export const COSMIC_THEME = {
   name: 'cosmic',
-  base: 'default',
+  base: null,
   variables: {
 
     temperature: [

@@ -1,0 +1,57 @@
+<!--<nb-card>-->
+<!--  <ul>-->
+<!--    <li *ngFor="let client of clients | async">-->
+<!--      <input type="text" #updatetext [value]="client.name" />-->
+<!--      <button (click)="updateItem(item.$key, updatetext.value)">Update</button>-->
+<!--      <button (click)="deleteItem(item.$key)">Delete</button>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  <input type="text" #newitem />-->
+<!--  <button (click)="addItem(newitem.value)">Add</button>-->
+<!--  <button (click)="deleteEverything()">Delete All</button>-->
+<!--</nb-card>-->
+<nb-card setSize="large">
+  <nb-card-header>
+    Your Clients:
+  </nb-card-header>
+  <nb-card-body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">website</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients | async">
+          <td>{{client.name}}</td>
+          <td><a href="http://{{client.website}}" target="_blank">{{client.website}}</a></td>
+          <td>{{client.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-header>New Client</nb-card-header>
+  <nb-card-body>
+    <div class="input-group">
+      <input type="text" #addName placeholder="Name" class="form-control" />
+    </div>
+    <div class="row full-name-inputs">
+      <div class="col-sm-6 input-group">
+        <input type="text" #addWebsite placeholder="Website" class="form-control" />
+      </div>
+      <div class="col-sm-6 input-group">
+        <input type="text" #addStatus placeholder="Status" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-sm-3 col-sm-9">
+        <button (click)="addItem(addName.value, addWebsite.value, addStatus.value)" type="submit" class="btn btn-warning">Add</button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+

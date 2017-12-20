@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-6">
+        <nb-card>
+            <nb-card-header>Edit User Information</nb-card-header>
+            <nb-card-body>
+                <div class="input-group">
+                    <input type="text" placeholder="Project" class="form-control" disabled/>
+                </div>
+                <div class="row full-name-inputs">
+                    <div class="col-sm-6 input-group">
+                        <input type="text" placeholder="{{authService.displayName}}" class="form-control" disabled/>
+                    </div>
+                    
+                </div>
+                <div class="input-group">
+                    <textarea rows="5" placeholder="Description..." class="form-control"></textarea>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+
+    <div class="col-lg-4">
+        <nb-card size="medium">
+            <nb-card-body class="profile">
+                <div class="picture"  [style.background-image]=safePic ></div>
+
+                <div class="details">
+                    <div class="title">
+                        {{authService.displayName}}
+                    </div>
+                    <div class="description">
+                        This is a description of the user
+                    </div>
+                </div>
+            </nb-card-body>
+
+            <nb-card-footer>
+                <a href="https://akveo.github.io/react-native-ui-kitten" target="_blank">
+                  <i class="ion-ios-world"></i>
+                </a>
+                <a href="https://itunes.apple.com/us/app/kitten-tricks/id1246143230" target="_blank">
+                  <i class="ion-social-apple"></i>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.akveo.kittenTricks" target="_blank">
+                  <i class="ion-social-android"></i>
+                </a>
+                <a href="https://github.com/akveo/react-native-ui-kitten" target="_blank">
+                  <i class="ion-social-github"></i>
+                </a>
+            </nb-card-footer>
+        </nb-card>
+    </div>
+
+</div>

@@ -12,14 +12,14 @@ export class ElectricityComponent implements OnDestroy {
 
   data: Array<any>;
 
-  type = 'week';
+  type: string = 'week';
   types = ['week', 'month', 'year'];
 
   currentTheme: string;
   themeSubscription: any;
 
   constructor(private eService: ElectricityService, private themeService: NbThemeService) {
-    this.data = this.eService.getData();
+    this.data = eService.getData();
 
     this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
       this.currentTheme = theme.name;

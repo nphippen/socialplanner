@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FormInputsComponent {
 
-  starRate = 2;
-  heartRate = 4;
+  starRate: number = 2;
+  heartRate: number = 4;
 }

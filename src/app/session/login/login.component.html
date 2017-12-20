@@ -1,0 +1,34 @@
+<app-auth-block>
+    <h2 class="title">Log In</h2>
+    <small class="form-text sub-title">Welcome, log in with your username:</small>
+    <form (ngSubmit)="login()" [formGroup]="form" autocomplete="nope">
+        <div class="form-group">
+            <label for="input-email" class="sr-only">Email address</label>
+            <input formControlName="email" id="input-email" class="form-control" placeholder="Email address" autofocus [formControl]="form.controls['email']">
+            <small *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" class="mat-text-warn">Email is verplicht.</small>
+        </div>
+        <div class="form-group">
+            <label for="input-password" class="sr-only">Password</label>
+            <input formControlName="password" type="password" id="input-password" class="form-control" placeholder="Password" [formControl]="form.controls['password']">
+            <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="mat-text-warn">Password is Required.</small>
+        </div>
+        <div class="form-group accept-group col-sm-12">
+            <a class="forgot-password" [routerLink]="['../auth/forgot']">Forgot Password?</a>
+        </div>
+        <button [disabled]="submitted || !form.valid" class="btn btn-block btn-hero-success" [class.btn-pulse]="submitted">
+        Log In
+      </button>
+    </form>
+    <div class="links">
+        <small class="form-text">Log in with:</small>
+        <div class="socials">
+            <a href="#" (click)="signInWithGoogle()" class="socicon-google"></a>
+            <a href="#" (click)="signInWithFacebook()" class="socicon-facebook"></a>
+            <a href="#" (click)="signInWithTwitter()" class="socicon-twitter"></a>
+            <a href="#" (click)="signInWithGithub()" class="socicon-github"></a>
+        </div>
+        <small class="form-text">
+        Need an Account? <a [routerLink]="['../auth/register']"><strong>Register</strong></a>
+      </small>
+    </div>
+</app-auth-block>
